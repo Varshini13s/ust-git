@@ -1,1 +1,2 @@
 practicing git 
+sample code
