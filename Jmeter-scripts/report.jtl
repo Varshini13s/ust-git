@@ -1,0 +1,4 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1763533009652,745,Get Request,200,OK,Thread Group 1-1,text,true,,1137,154,1,1,https://postman-echo.com/get,738,0,457
+1763533010412,268,Post Request,200,OK,Thread Group 1-1,text,true,,1240,202,1,1,https://postman-echo.com/post,268,0,0
+1763533010682,264,Put Request,200,OK,Thread Group 1-1,text,true,,1267,218,1,1,https://postman-echo.com/put,264,0,0
