@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "f6f980ce-c7a9-4029-9b08-26c886127657",
+    "name": "xpath visualizer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Visualization Script",
+              "// Visualization Script",
+              "const template = `",
+              "<div>",
+              "  <h3>Slides by Type</h3>",
+              "  <canvas id=\"slideChart\" height=\"75\"></canvas>",
+              "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script>",
+              "  <script>",
+              "    pm.getData(function (err, value) {",
+              "      var ctx = document.getElementById(\"slideChart\");",
+              "      var chartData = value.chartData;",
+              "      var myChart = new Chart(ctx, {",
+              "        type: \"bar\",",
+              "        data: {",
+              "          labels: chartData.labels,",
+              "          datasets: [{",
+              "            label: 'Count',",
+              "            data: chartData.counts,",
+              "            backgroundColor: 'rgba(54, 162, 235, 0.6)',",
+              "            borderColor: 'rgba(54, 162, 235, 1)',",
+              "            borderWidth: 1",
+              "          }]",
+              "        },",
+              "        options: {",
+              "          legend: { display: false },",
+              "          title: { display: false },",
+              "          scales: {",
+              "            xAxes: [{",
+              "              display: true,",
+              "              scaleLabel: { display: true, labelString: 'Type' }",
+              "            }],",
+              "            yAxes: [{",
+              "              display: true,",
+              "              scaleLabel: { display: true, labelString: 'Count' },",
+              "              ticks: { beginAtZero: true, precision: 0 }",
+              "            }]",
+              "          }",
+              "        }",
+              "      });",
+              "    });",
+              "  </script>",
+              "</div>`;",
+              "",
+              "function createPayload() {",
+              "  var jsonObject = xml2Json(pm.response.text());",
+              "  // Expected XML: <slideshow><slide type=\"...\">...</slide>...</slideshow>",
+              "  var slides = [];",
+              "  if (jsonObject.slideshow && jsonObject.slideshow.slide) {",
+              "    slides = Array.isArray(jsonObject.slideshow.slide) ? jsonObject.slideshow.slide : [jsonObject.slideshow.slide];",
+              "  }",
+              "  var typeCounts = {};",
+              "  slides.forEach(function (slide) {",
+              "    var type = slide.$ && slide.$.type ? slide.$.type : 'unknown';",
+              "    typeCounts[type] = (typeCounts[type] || 0) + 1;",
+              "  });",
+              "  return {",
+              "    chartData: {",
+              "      labels: Object.keys(typeCounts),",
+              "      counts: Object.values(typeCounts)",
+              "    }",
+              "  };",
+              "}",
+              "",
+              "pm.visualizer.set(template, createPayload());"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://httpbin.org/xml",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "xml"
+          ]
+        }
+      }
+    }
+  ]
+}

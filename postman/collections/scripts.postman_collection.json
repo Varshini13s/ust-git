@@ -1,9 +1,8 @@
 {
   "info": {
-    "_postman_id": "7db56376-551a-4b54-8f7f-b3a65f02d8aa",
+    "_postman_id": "dbeded3d-4c4d-4579-883d-96ebca37e0d2",
     "name": "scripts",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "39280315"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
@@ -12,7 +11,6 @@
         {
           "listen": "prerequest",
           "script": {
-            "id": "0066c56f-089d-4899-bf6b-8fe1349b75cf",
             "exec": [
               "try {\r",
               "    const response = await pm.sendRequest({\r",
@@ -25,30 +23,23 @@
               "    console.error(err);\r",
               "}"
             ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
+            "type": "text/javascript"
           }
         },
         {
           "listen": "test",
           "script": {
-            "id": "f9acbc43-d249-4c0b-a93a-6103eb31dbc7",
             "exec": [
               "pm.test(\"Status code is 200\", function () {\r",
               "    pm.response.to.have.status(200);\r",
               "});"
             ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
+            "type": "text/javascript"
           }
         }
       ],
-      "id": "289de1cb-0a89-4800-93ce-38fd89ecbe4b",
       "request": {
         "method": "GET",
-        "header": [],
         "url": {
           "raw": "https://postman-echo.com/get",
           "protocol": "https",
@@ -60,8 +51,7 @@
             "get"
           ]
         }
-      },
-      "response": []
+      }
     },
     {
       "name": "script2",
@@ -69,7 +59,6 @@
         {
           "listen": "prerequest",
           "script": {
-            "id": "1645baf7-0b66-4989-8a54-618dde6157af",
             "exec": [
               "try {\r",
               "    const response = await pm.sendRequest({\r",
@@ -82,30 +71,23 @@
               "    console.error(err);\r",
               "}"
             ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
+            "type": "text/javascript"
           }
         },
         {
           "listen": "test",
           "script": {
-            "id": "ff8e597d-729a-4ead-9bb8-68aeaa4792cf",
             "exec": [
               "pm.test(\"Status code is 200\", function () {\r",
               "    pm.response.to.have.status(200);\r",
               "});"
             ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
+            "type": "text/javascript"
           }
         }
       ],
-      "id": "7f611c53-4e10-4f88-9c76-e53edbedd89e",
       "request": {
         "method": "POST",
-        "header": [],
         "body": {
           "mode": "raw",
           "raw": "",
@@ -126,8 +108,7 @@
             "post"
           ]
         }
-      },
-      "response": []
+      }
     }
   ]
 }
