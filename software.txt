@@ -1,0 +1,1 @@
+https://archive.eclipse.org/technology/epp/downloads/release/2022-09/R/eclipse-java-2022-09-R-win32-x86_64.zip
