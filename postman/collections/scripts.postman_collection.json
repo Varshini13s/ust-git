@@ -38,8 +38,13 @@
           }
         }
       ],
+      "id": "ef8825c2-eae2-41a8-aa9f-866d1196c7dd",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "https://postman-echo.com/get",
           "protocol": "https",
@@ -51,7 +56,8 @@
             "get"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "script2",
@@ -86,8 +92,13 @@
           }
         }
       ],
+      "id": "f85257d6-b814-43f3-bd96-4f881ca8526f",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "POST",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "",
@@ -108,7 +119,8 @@
             "post"
           ]
         }
-      }
+      },
+      "response": []
     }
   ]
 }

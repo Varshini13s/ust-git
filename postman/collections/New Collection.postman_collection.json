@@ -90,8 +90,13 @@
           }
         }
       ],
+      "id": "8690676c-b7b1-4f7e-bed5-cc95e07b15e7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "https://httpbin.org/xml",
           "protocol": "https",
@@ -103,7 +108,8 @@
             "xml"
           ]
         }
-      }
+      },
+      "response": []
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "e224fad8-907f-4cf9-9843-9fda9250ccc9",
+		"name": "csvCLI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39280315"
+	},
+	"item": [
+		{
+			"name": "dataDriven",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"${name}\",\r\n    \"city\":\"${city}\"\r\n}"
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
